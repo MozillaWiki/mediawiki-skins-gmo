@@ -1,0 +1,23 @@
+html {
+	background: #fff url("internal-back.png") repeat-y;
+}
+
+body {
+	background: url("https://www.mozilla.org/images/subsite_back.gif") repeat-x;
+	margin: 0;
+	padding: 0; 
+}
+
+#internal {
+	position: absolute;
+	top: 13px;
+	left: 0;
+	height: 200px;
+	width: 28px;
+	background: url(internal-note.png) no-repeat;
+}
+
+#container {
+	min-width: 610px;
+	margin: 0 20px 0 60px;
+}
