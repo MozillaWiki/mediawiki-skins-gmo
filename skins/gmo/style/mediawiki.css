@@ -1,0 +1,20 @@
+#siteSub,
+#jump-to-nav,
+.printfooter {
+  display:none;
+}
+
+ul#ptools, ul#edittools{
+margin: 0;
+}
+
+ul#ptools li, ul#edittools li {
+}
+
+#wpTextbox1 {
+  width: 100%;
+}
+
+#editpage-copywarn {
+  display: none;
+}

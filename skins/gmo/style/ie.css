@@ -1,0 +1,111 @@
+/*
+*************************************************
+
+MOZILLA.ORG
+Internet Explorer Screen Styles
+
+Created by the friendly folks at Happy Cog
+http://www.happycog.com/
+
+*************************************************
+*/
+
+
+
+/*-------------------------------------------    
+    Site-wide
+-------------------------------------------*/
+body { max-width:none; min-width:auto; margin:0 23px 0 166px; }
+
+* html body { background-image: url(/img/screen/bg_body_ie6.jpg); }
+
+#header, #footer-wrap { margin-right:-23px; }
+	* html #header { background: #2a2a2a url(/img/screen/dino-face.jpg) no-repeat 0 0; height:176px; }
+		* html #header h1 { position: relative; background: green; }
+			* html #header h1 a { background-image: url(/img/screen/logo.gif); top: 79px; left: 64px; }
+
+#nav { left:0; padding-right:0; margin-right:23px; }
+* + html #nav { margin-right:46px; }
+	* html #nav a { height: 1%; }
+
+#quick-search { right:0; }
+* html #quick-search { bottom:-5.8em; }
+	#quick-search #q { padding: 1px; }
+
+* html #localnav { background: #fff; border-left: 1px solid #f1f1f1; border-right: 1px solid #f1f1f1; padding: 0 0 1em; margin-right: 33px; position:relative; z-index:10; }
+	* html #localnav li.first { border-top:none; }
+
+#footer { height: 1%; padding-right:0; }
+
+
+
+/*-------------------------------------------    
+    Modules
+-------------------------------------------*/
+* html .home #main-wrap { margin-right:-320px; }
+* html .home #main { float:none; margin-right:320px; }
+	* html #main { float:left; }
+
+* + html .home #main-wrap { margin-right:-311px; }
+* + html .home #main { margin-right:311px; }
+
+* html #primary-wrap { float:left; margin-right:-275px; width:100%; }
+* html #primary { margin-right:275px; }
+
+/** html .video-holder,
+* html .principles { display:none; }*/
+
+* html #sub { float:right; width:230px; margin: 40px 0 0; }
+
+* html .video-holder { height: 375px; width: 428px; background: transparent url(/img/screen/video-bg.jpg) no-repeat 0 0; padding: 50px 0 0 50px; }
+* html .video { margin: 0 !important; position: static !important; }
+
+.cols .last { margin-right:0; padding-right:0; }
+	.six-col { width:14%; }
+	* html .three-col { width:25%; }
+
+* html .section { height:1%; }
+
+
+/*-------------------------------------------    
+    Homepage News
+-------------------------------------------*/
+* html #news { height:1%; position:relative; left:1px; margin-left:-1px; }
+* html #news .section { margin: 0 0 0 31px; }
+
+* + html #news { height:1%; padding-left:62px; }
+* + html #news #latest-news { margin-left:0; }
+* + html #news .section { margin: 0; }
+
+/*-------------------------------------------    
+    Homepage Morals
+-------------------------------------------*/
+* html .agree { right:310px; }
+* + html .agree { right:-50px; }
+
+/*-------------------------------------------    
+    Homepage Projects
+-------------------------------------------*/
+* html .project-carousel { background:#CBCCCC; margin-right:0; padding:6px; height:1%; clear:both; }
+#our-projects { clear:both; }
+* html .projects-wrap { background: #dee0e1; }
+* html .projects { margin:10px 0 0 0; height:1%; background:#dee0e1; position:static; }
+* html .project { overflow:hidden; height:10em; width:220px; margin:10px; }
+
+* + html .home .project-carousel { margin-right:-295px !important; }
+* + html .home .project-carousel .pagination { right:305px; }
+* + html .home .project-carousel .projects { margin-right:305px; }
+
+/*-------------------------------------------    
+    Homepage Community
+-------------------------------------------*/
+* html .home #community-sub { background: transparent url(/img/screen/bg_community_t.gif) no-repeat left top; }
+	* html #community-sub p.more { background: transparent url(/img/screen/community-bottom.gif) no-repeat 50% bottom; }
+
+/*-------------------------------------------    
+    Footer
+-------------------------------------------*/
+#languages { right:15px; }
+
+* html .modified { right:146px; }
+* html .edit { right:16px; }
