@@ -24,14 +24,14 @@ require_once('includes/SkinTemplate.php');
  */
 class SkinCavendish extends SkinTemplate {
 	/** Using cavendish. */
-	function initPage( &$out ) {
+	function initPage( OutputPage $out ) {
 		SkinTemplate::initPage( $out );
 		$this->skinname  = 'cavendish';
 		$this->stylename = 'cavendish';
 		$this->template  = 'CavendishTemplate';
 	}
 }
-	
+
 class CavendishTemplate extends QuickTemplate {
 	/**
 	 * Template filter callback for MonoBook skin.
@@ -62,19 +62,18 @@ class CavendishTemplate extends QuickTemplate {
 	<?php if($this->data['userjs'    ]) { ?><script type="text/javascript" src="<?php $this->text('userjs'    ) ?>"></script><?php } ?>
 	<?php if($this->data['userjsprev']) { ?><script type="text/javascript"><?php      $this->html('userjsprev') ?></script><?php   } ?>
 	<?php $this->html('headscripts') ?>
-    <script src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=gmo&amp;*"></script>
-    <script src="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=gmo&amp;*"></script>
-    <script>if ( window.mediaWiki ) {
+	<script src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=gmo&amp;*"></script>
+	<script src="/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=gmo&amp;*"></script>
+	<script>if ( window.mediaWiki ) {
 
-        mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.smw.sorttable"]);
-        mediaWiki.loader.go();
-    }
-    </script>
-    <script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
+		mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.smw.sorttable"]);
+		mediaWiki.loader.go();
+	}
+	</script>
+	<script type="text/javascript"> if ( window.isMSIE55 ) fixalpha(); </script>
 </head>
 
-<body <?php if($this->data['body_ondblclick']) { ?>ondblclick="<?php $this->text('body_ondblclick') ?>"<?php } ?>
-      <?php if($this->data['nsclass'        ]) { ?>class="<?php      $this->text('nsclass')         ?>"<?php } ?>>
+<body >
 
 <div id="internal"></div>
 <div id="container">
@@ -85,54 +84,54 @@ class CavendishTemplate extends QuickTemplate {
 	<div id="header">
 		<a name="top" id="contentTop"></a>
 		<h1><a
-	    href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>"
-	    title="<?php $this->msg('mainpage') ?>"><?php $this->text('title') ?></a></h1>
+		href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>"
+		title="<?php $this->msg('mainpage') ?>"><?php $this->text('title') ?></a></h1>
 		<ul>
-		   	<?php foreach($this->data['content_actions'] as $key => $action) {
-		       ?><li
-		       <?php if($action['class']) { ?>class="<?php echo htmlspecialchars($action['class']) ?>"<?php } ?>
-		       ><a href="<?php echo htmlspecialchars($action['href']) ?>"><?php
-		       echo htmlspecialchars($action['text']) ?></a></li><?php
-		     } ?>
+			<?php foreach($this->data['content_actions'] as $key => $action) {
+			   ?><li
+			   <?php if($action['class']) { ?>class="<?php echo htmlspecialchars($action['class']) ?>"<?php } ?>
+			   ><a href="<?php echo htmlspecialchars($action['href']) ?>"><?php
+			   echo htmlspecialchars($action['text']) ?></a></li><?php
+			 } ?>
 		</ul>
 		<form name="searchform" action="<?php $this->text('searchaction') ?>" id="search">
 			<div>
 			<label for="q"><?php $this->msg('search') ?></label>
 			<input id="q" name="search" type="text"
 			<?php if($this->haveMsg('accesskey-search')) {
-	          ?>accesskey="<?php $this->msg('accesskey-search') ?>"<?php }
-	        if( isset( $this->data['search'] ) ) {
-	          ?> value="<?php $this->text('search') ?>"<?php } ?> />
+			  ?>accesskey="<?php $this->msg('accesskey-search') ?>"<?php }
+			if( isset( $this->data['search'] ) ) {
+			  ?> value="<?php $this->text('search') ?>"<?php } ?> />
 			<input type="submit" name="go" class="searchButton" id="searchGoButton"
-	        value="<?php $this->msg('go') ?>"
-	        />&nbsp;<input type="submit" name="fulltext"
-	        class="searchButton"
-	        value="<?php $this->msg('search') ?>" />
-	       </div>
+			value="<?php $this->msg('go') ?>"
+			/>&nbsp;<input type="submit" name="fulltext"
+			class="searchButton"
+			value="<?php $this->msg('search') ?>" />
+		   </div>
 		</form>
 	</div>
 
 	<div id="mBody">
-	
+
 		<div id="side">
 			<ul id="nav">
 				<li><span><?php $this->msg('personaltools') ?></span>
 					<ul>
 					<?php foreach($this->data['personal_urls'] as $key => $item) {
-				       ?><li id="pt-<?php echo htmlspecialchars($key) ?>"><a href="<?php
-				       echo htmlspecialchars($item['href']) ?>"<?php
-		 		      if(!empty($item['class'])) { ?> class="<?php
-				       echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
-				       echo htmlspecialchars($item['text']) ?></a></li><?php
-				    } ?>
+					   ?><li id="pt-<?php echo htmlspecialchars($key) ?>"><a href="<?php
+					   echo htmlspecialchars($item['href']) ?>"<?php
+					  if(!empty($item['class'])) { ?> class="<?php
+					   echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
+					   echo htmlspecialchars($item['text']) ?></a></li><?php
+					} ?>
 					</ul>
 				</li>
 				<li><span><?php $this->msg('navigation') ?></span>
 					<ul>
-				       <?php foreach ($this->data['sidebar'] as $bar => $cont) { ?>
+					   <?php foreach ($this->data['sidebar'] as $bar => $cont) { ?>
 					   <?php foreach($cont as $key => $val) { ?>
-					     <li id="<?php echo htmlspecialchars($val['id']) ?>"><a href="<?php echo htmlspecialchars($val['href']) ?>"><?php echo htmlspecialchars($val['text'])?></a></li>
-					    <?php } ?>
+						 <li id="<?php echo htmlspecialchars($val['id']) ?>"><a href="<?php echo htmlspecialchars($val['href']) ?>"><?php echo htmlspecialchars($val['text'])?></a></li>
+						<?php } ?>
 				<?php } ?>
 
 					</ul>
@@ -141,18 +140,18 @@ class CavendishTemplate extends QuickTemplate {
 					<ul>
 					  <?php if($this->data['notspecialpage']) { foreach( array( 'whatlinkshere', 'recentchangeslinked' ) as $special ) { ?>
 					  <li id="t-<?php echo $special?>"><a href="<?php
-					    echo htmlspecialchars($this->data['nav_urls'][$special]['href']) 
-					    ?>"><?php echo $this->msg($special) ?></a></li>
+						echo htmlspecialchars($this->data['nav_urls'][$special]['href'])
+						?>"><?php echo $this->msg($special) ?></a></li>
 					  <?php } } ?>
-				      <?php if($this->data['feeds']) { ?><li id="feedlinks"><?php foreach($this->data['feeds'] as $key => $feed) {
-				        ?><span id="feed-<?php echo htmlspecialchars($key) ?>"><a href="<?php
-				        echo htmlspecialchars($feed['href']) ?>"><?php echo htmlspecialchars($feed['text'])?></a>&nbsp;</span>
-				        <?php } ?></li><?php } ?>
-				      <?php foreach( array('contributions', 'emailuser', 'upload', 'specialpages') as $special ) { ?>
-				      <?php if($this->data['nav_urls'][$special]) {?><li id="t-<?php echo $special ?>"><a href="<?php
-				        echo htmlspecialchars($this->data['nav_urls'][$special]['href'])
-				        ?>"><?php $this->msg($special) ?></a></li><?php } ?>
-				      <?php } ?>
+					  <?php if($this->data['feeds']) { ?><li id="feedlinks"><?php foreach($this->data['feeds'] as $key => $feed) {
+						?><span id="feed-<?php echo htmlspecialchars($key) ?>"><a href="<?php
+						echo htmlspecialchars($feed['href']) ?>"><?php echo htmlspecialchars($feed['text'])?></a>&nbsp;</span>
+						<?php } ?></li><?php } ?>
+					  <?php foreach( array('contributions', 'emailuser', 'upload', 'specialpages') as $special ) { ?>
+					  <?php if($this->data['nav_urls'][$special]) {?><li id="t-<?php echo $special ?>"><a href="<?php
+						echo htmlspecialchars($this->data['nav_urls'][$special]['href'])
+						?>"><?php $this->msg($special) ?></a></li><?php } ?>
+					  <?php } ?>
 					</ul>
 				</li>
 				<?php if( $this->data['language_urls'] ) { ?>
@@ -169,9 +168,9 @@ class CavendishTemplate extends QuickTemplate {
 				<?php } ?>
 			</ul>
 		</div><!-- end of SIDE div -->
-		
+
 		<div id="mainContent">
-			
+
 			<h1><?php $this->text('title') ?></h1>
 			<h3 id="siteSub"><?php $this->msg('tagline') ?></h3>
 			<div id="contentSub"><?php $this->html('subtitle') ?></div>
@@ -182,8 +181,8 @@ class CavendishTemplate extends QuickTemplate {
 			<?php if($this->data['catlinks']) { ?><div id="catlinks"><?php       $this->html('catlinks') ?></div><?php } ?>
 			<!-- end content -->
 
-		</div><!-- end of MAINCONTENT div -->	
-	
+		</div><!-- end of MAINCONTENT div -->
+
 	</div><!-- end of MBODY div -->
 
 	<div id="footer">
@@ -195,7 +194,7 @@ class CavendishTemplate extends QuickTemplate {
 			<?php if($this->data['copyright' ]) { ?><li id="f-copyright"><?php  $this->html('copyright')  ?></li><?php } ?>
 			<?php if($this->data['about'     ]) { ?><li id="f-about"><?php      $this->html('about')      ?></li><?php } ?>
 			<?php if($this->data['disclaimer']) { ?><li id="f-disclaimer"><?php $this->html('disclaimer') ?></li><?php } ?>
-            <li><a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a></li>
+			<li><a href="http://www.mozilla.org/about/policies/privacy-policy.html">Privacy Policy</a></li>
 		</ul>
 		<?php if($this->data['poweredbyico']) { ?><div id="f-poweredbyico"><?php $this->html('poweredbyico') ?></div><?php } ?>
 	</div><!-- end of the FOOTER div -->
