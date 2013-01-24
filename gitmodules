@@ -1,0 +1,56 @@
+# ordering of url and path lines is important here!
+
+[submodule "extensions/NoTitle"]
+	url = https://github.com/AABoyles/NoTitle.git
+	path = extensions/NoTitle
+[submodule "extensions/Bugzilla"]
+	url = https://github.com/mozilla/mediawiki-bugzilla
+	path = extensions/Bugzilla
+[submodule "extensions/mediawiki-semantic-html"]
+	url = https://github.com/BenWard/mediawiki-semantic-html.git
+	path = extensions/mediawiki-semantic-html
+[submodule "extensions/ImageMap"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ImageMap
+	path = extensions/ImageMap
+[submodule "extensions/LabeledSectionTransclusion"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/LabeledSectionTransclusion
+	path = extensions/LabeledSectionTransclusion
+[submodule "extensions/OggHandler"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/OggHandler
+	path = extensions/OggHandler
+[submodule "extensions/ParserFunctions"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/ParserFunctions
+	path = extensions/ParserFunctions
+[submodule "extensions/Renameuser"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Renameuser
+	path = extensions/Renameuser
+[submodule "extensions/SemanticForms"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticForms
+	path = extensions/SemanticForms
+[submodule "extensions/SemanticMediaWiki"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticMediaWiki
+	path = extensions/SemanticMediaWiki
+[submodule "extensions/SemanticWatchlist"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SemanticWatchlist
+	path = extensions/SemanticWatchlist
+[submodule "extensions/SpamBlacklist"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/SpamBlacklist
+	path = extensions/SpamBlacklist
+[submodule "extensions/UrlGetParameters"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/UrlGetParameters
+	path = extensions/UrlGetParameters
+[submodule "extensions/Validator"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/Validator
+	path = extensions/Validator
+[submodule "extensions/WikiEditor"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/WikiEditor
+	path = extensions/WikiEditor
+[submodule "extensions/SyntaxHighlighter"]
+	url = git://github.com/seongjaelee/SyntaxHighlighter.git
+	path = extensions/SyntaxHighlighter
+[submodule "extensions/gmo"]
+	url = git@github.com:mozilla/mediawiki-skins-gmo.git
+	path = extensions/gmo
+[submodule "extensions/DataValues"]
+	url = https://gerrit.wikimedia.org/r/p/mediawiki/extensions/DataValues
+	path = extensions/DataValues
