@@ -100,9 +100,8 @@ class GMOTemplate extends QuickTemplate {
 	<?php $this->html('csslinks') ?>
 
 	<link rel="stylesheet" type="text/css" media="print" href="<?php $this->text('stylepath') ?>/common/commonPrint.css" />
-	<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
-	<script type="text/javascript" src="<?php                                   $this->text('stylepath' ) ?>/common/wikibits.js"></script>
-	<?php if($this->data['jsvarurl'  ]) { ?><script type="text/javascript" src="<?php $this->text('jsvarurl'  ) ?>"></script><?php } ?>
+	<?php print Skin::makeGlobalVariablesScript( $this->data );
+	if($this->data['jsvarurl'  ]) { ?><script type="text/javascript" src="<?php $this->text('jsvarurl'  ) ?>"></script><?php } ?>
 	<?php   if($this->data['pagecss']) { ?>
 			<style type="text/css"><?php $this->html('pagecss') ?></style>
 	<?php   } ?>

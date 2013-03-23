@@ -89,9 +89,7 @@ class CavendishTemplate extends QuickTemplate {
 	<?php $this->html('csslinks') ?>
 	<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "<?php $this->text('stylepath') ?>/<?php $this->text('stylename') ?>/main.css"; /*]]>*/</style>
 	<link rel="stylesheet" type="text/css" media="print" href="<?php $this->text('stylepath') ?>/common/commonPrint.css" />
-	<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
-	<script type="text/javascript" src="<?php $this->text('stylepath' ) ?>/common/wikibits.js"></script>
-	<?php
+	<?php print Skin::makeGlobalVariablesScript( $this->data );
 	$jsBit = array( 'jsvarurl', 'userjs', 'userjsprev' );
 	foreach( $jsBit as $bit ) {
 		if( isset( $this->data[ $bit ] ) ) {
@@ -237,7 +235,7 @@ class CavendishTemplate extends QuickTemplate {
 
 	</div><!-- end of MBODY div -->
 <?php
-    }
+	}
 
 	function footer() {
 ?>
