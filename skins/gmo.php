@@ -150,15 +150,13 @@ class GMOTemplate extends QuickTemplate {
 
 		<form action="<?php $this->text('searchaction') ?>" id="quick-search"><div>
 			<input id="q" name="search" type="text" />
-			<input type="image" id="quick-search-btn" alt="Search" src="<?php echo $wgStylePath; ?>/../extensions/gmo/skins/gmo/img/screen/template/search-submit.png">
-		</form>
+			<input type="image" id="quick-search-btn" alt="Search" src="<?php echo $wgStylePath; ?>/../extensions/gmo/skins/gmo/img/screen/template/search-submit.png"/>
+		</div></form>
 
-		</div>
 	</div>
 
 </div>
 
-</div>
 <div id="main">
 	<?php
 		}
