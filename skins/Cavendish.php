@@ -115,8 +115,23 @@ class CavendishTemplate extends QuickTemplate {
 <?php
 	}
 
+	/*************************************************************************************************/
 	function header() {
 		global $wgStylePath;
+
+		$ulBody = "";
+		foreach($this->data['content_actions'] as $key => $action) {
+			$xmlID = isset( $action['id'] ) ? $action['id'] : $action['action'];
+			$ulBody .= "<li id='$xmlID'";
+			if($action['class']) {
+				$ulBody .= 'class="'. htmlspecialchars($action['class']) . '">';
+			}
+			$ulBody .= "<a href='" . htmlspecialchars($action['href']) . "' ".
+				Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( $xmlID ) );
+
+			$ulBody .= ">". htmlspecialchars($action['text']) .'</a></li>';
+		}
+
 ?>
 	<body <?php if(isset($this->data['body_ondblclick'])) { ?>ondblclick="<?php $this->text('body_ondblclick') ?>"<?php } ?>
 	<?php if(isset($this->data['nsclass'        ])) { ?>class="<?php      $this->text('nsclass')         ?>"<?php } ?>>
@@ -133,12 +148,7 @@ class CavendishTemplate extends QuickTemplate {
 		href="<?php echo htmlspecialchars($this->data['nav_urls']['mainpage']['href'])?>"
 		title="<?php $this->msg('mainpage') ?>"><?php $this->text('title') ?></a></h1>
 		<ul>
-			<?php foreach($this->data['content_actions'] as $key => $action) {
-			   ?><li
-			   <?php if($action['class']) { ?>class="<?php echo htmlspecialchars($action['class']) ?>"<?php } ?>
-			   ><a href="<?php echo htmlspecialchars($action['href']) ?>"><?php
-			   echo htmlspecialchars($action['text']) ?></a></li><?php
-			 } ?>
+		  <?php echo $ulBody ?>
 		</ul>
 		<form name="searchform" action="<?php $this->text('searchaction') ?>" id="search">
 			<div>

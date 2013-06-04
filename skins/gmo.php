@@ -125,6 +125,19 @@ class GMOTemplate extends QuickTemplate {
 	function header() {
 		global $wgStylePath;
 
+		$ulBody = "";
+		foreach($this->data['content_actions'] as $key => $action) {
+			$xmlID = isset( $action['id'] ) ? $action['id'] : $action['action'];
+			$ulBody .= "<li id='$xmlID'";
+			if($action['class']) {
+				$ulBody .= 'class="'. htmlspecialchars($action['class']) . '">';
+			}
+			$ulBody .= "<a href='" . htmlspecialchars($action['href']) . "' ".
+				Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( $xmlID ) );
+
+			$ulBody .= ">". htmlspecialchars($action['text']) .'</a></li>';
+		}
+
 ?>
 <body<?php if( isset( $this->data['body_ondblclick'] ) ) { ?> ondblclick="<?php $this->text('body_ondblclick') ?>"<?php } ?>
 <?php if( isset( $this->data['body_onload'] ) ) { ?> onload="<?php $this->text('body_onload') ?>"<?php } ?>
@@ -140,12 +153,7 @@ class GMOTemplate extends QuickTemplate {
 	<h1 class="unitPng"><a href="/"><?php echo $GLOBALS['wgSitename'];?></a></h1>
 	<div id="header-contents">
 		<ul id="nav">
-			<?php foreach($this->data['content_actions'] as $key => $action) {
-			?><li id="ca-<?php echo htmlspecialchars($key) ?>"
-			<?php if($action['class']) { ?>class="<?php echo htmlspecialchars($action['class']) ?>"<?php } ?>
-			><a href="<?php echo htmlspecialchars($action['href']) ?>"><?php
-				echo htmlspecialchars($action['text']) ?></a></li><?php
-			} ?>
+ <?php echo $ulBody; ?>
 		</ul>
 
 		<form action="<?php $this->text('searchaction') ?>" id="quick-search"><div>
