@@ -69,6 +69,7 @@ class GMOTemplate extends QuickTemplate {
 		$this->header();
 		$this->body();
 		$this->footer();
+		$this->endDoc();
 	}
 
 	/*************************************************************************************************/
@@ -281,6 +282,17 @@ class GMOTemplate extends QuickTemplate {
 <?php
 	}
 
+	function endDoc() {
+		$this->html('bottomscripts'); /* JS call to runBodyOnloadHook */
+		$this->html('reporttime');
+		if ( $this->data['debug'] ) {
+			echo "<!-- Debug output:  \n";
+			$this->text( 'debug' );
+			echo "\n-->";
+		}
+		echo "</body></html>";
+	}
+
 	/*************************************************************************************************/
 	function menu($toc) {
 ?>
@@ -355,4 +367,3 @@ class GMOTemplate extends QuickTemplate {
 	}
 
 } // end of class
-
