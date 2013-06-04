@@ -128,10 +128,11 @@ class GMOTemplate extends QuickTemplate {
 		$ulBody = "";
 		foreach($this->data['content_actions'] as $key => $action) {
 			$xmlID = isset( $action['id'] ) ? $action['id'] : $action['action'];
-			$ulBody .= "<li id='$xmlID'";
+			$ulBody .= "<li id='$xmlID' ";
 			if($action['class']) {
-				$ulBody .= 'class="'. htmlspecialchars($action['class']) . '">';
+				$ulBody .= 'class="'. htmlspecialchars($action['class']);
 			}
+			$ulBody .= '">';
 			$ulBody .= "<a href='" . htmlspecialchars($action['href']) . "' ".
 				Xml::expandAttributes( Linker::tooltipAndAccesskeyAttribs( $xmlID ) );
 
