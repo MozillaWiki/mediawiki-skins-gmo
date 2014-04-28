@@ -89,21 +89,13 @@ class CavendishTemplate extends QuickTemplate {
 	<?php $this->html('csslinks') ?>
 	<style type="text/css" media="screen,projection">/*<![CDATA[*/ @import "<?php $this->text('stylepath') ?>/<?php $this->text('stylename') ?>/main.css"; /*]]>*/</style>
 	<link rel="stylesheet" type="text/css" media="print" href="<?php $this->text('stylepath') ?>/common/commonPrint.css" />
-	<?php print Skin::makeGlobalVariablesScript( $this->data );
-	$jsBit = array( 'jsvarurl', 'userjs', 'userjsprev' );
-	foreach( $jsBit as $bit ) {
-		if( isset( $this->data[ $bit ] ) ) {
-			echo "<script type='text/javascript' src='" . $this->text($bit) ."'></script>\n";
-		}
-	}
-	$cssBit = array( 'pagecss', 'usercss' );
-	foreach( $cssBit as $bit ) {
-		if( isset( $this->data[ $bit ] ) ) {
-			echo "<style type='text/css'>". $this->html($bit) ."</style>\n";
-		}
-	}
-	$this->html('headscripts');
-	?>
+	<?php print Skin::makeGlobalVariablesScript( $this->data ); ?>
+	<?php if($this->data['jsvarurl'  ]) { ?><script type="text/javascript" src="<?php $this->text('jsvarurl'  ) ?>"></script><?php } ?>
+	<?php if($this->data['pagecss'   ]) { ?><style type="text/css"><?php              $this->html('pagecss'   ) ?></style><?php    } ?>
+	<?php if($this->data['usercss'   ]) { ?><style type="text/css"><?php              $this->html('usercss'   ) ?></style><?php    } ?>
+	<?php if($this->data['userjs'    ]) { ?><script type="text/javascript" src="<?php $this->text('userjs'    ) ?>"></script><?php } ?>
+	<?php if($this->data['userjsprev']) { ?><script type="text/javascript"><?php      $this->html('userjsprev') ?></script><?php   } ?>
+	<?php $this->html('headscripts'); ?>
 	<script>if ( window.mediaWiki ) {
 
 		mediaWiki.loader.load(["mediawiki.util", "mediawiki.legacy.wikibits", "mediawiki.legacy.ajax", "ext.smw.sorttable"]);
