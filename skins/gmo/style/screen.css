@@ -113,7 +113,8 @@ fieldset{background:#F0F0F0;border:1px solid #e1e1e1;padding:1em;border-radius:6
 fieldset legend{font-weight:bold;font-family:Georgia,serif;}
 .clearfix:after, #main:after, .projects:after, .cols:after, #news:after, #header:after{content:".";display:block;height:0;clear:both;visibility:hidden;font-size:0;}
 #skip, #quick-search label{display:block;position:absolute;left:-9999px;}
-.section{border-bottom:1px solid #c3c3c3;padding:2em 0;overflow:hidden;position:relative;}
+/* This conflicts with WikiEditor, and doesn't seem to be used anywhere?
+.section{border-bottom:1px solid #c3c3c3;padding:2em 0;overflow:hidden;position:relative;} */
 #primary .section{border-bottom:none;border-top:1px solid #c3c3c3;}
 #primary .section.first{border-top:none;padding-top:0;}
 .cols{clear:both;}
