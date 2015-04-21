@@ -12,6 +12,8 @@
 if( !defined( 'MEDIAWIKI' ) )
 	die( -1 );
 
+$wgValidSkinNames['gmo'] = 'gmo';
+
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  * @todo document
