@@ -16,6 +16,8 @@ if( !defined( 'MEDIAWIKI' ) )
 /** */
 require_once('includes/SkinTemplate.php');
 
+$wgValidSkinNames['cavendish'] = 'Cavendish';
+
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
  * @todo document
@@ -27,7 +29,7 @@ class SkinCavendish extends SkinTemplate {
 	function initPage( &$out ) {
 		parent::initPage( $out );
 		$this->skinname  = 'cavendish';
-		$this->stylename = 'cavendish';
+		$this->stylename = 'Cavendish';
 		$this->template  = 'CavendishTemplate';
 	}
 
