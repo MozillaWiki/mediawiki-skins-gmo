@@ -6,10 +6,10 @@
 ** Loosely based on the monobook style by Gabriel Wicke
 */
 
-@import url("/css/base/content.css");
-@import url("/css/cavendish/template.css");
-@import url("/css/base/template.css");
-@import url("/css/cavendish/content.css");
+@import url("/skins/Cavendish/css/base/content.css");
+@import url("/skins/Cavendish/css/cavendish/template.css");
+@import url("/skins/Cavendish/css/base/template.css");
+@import url("/skins/Cavendish/css/cavendish/content.css");
 
 
 #header ul { margin: 0; padding-right: 1em; }
