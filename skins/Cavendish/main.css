@@ -24,7 +24,7 @@
 }
 
 body {
-	background: url("https://www.mozilla.org/images/subsite_back.gif") repeat-x;
+	background: url("images/subsite_back.gif") repeat-x;
 	background-color: #FFF;
 	margin-top: 0;
 	padding-top: 0; 
@@ -44,7 +44,7 @@ div#header { clear: both; }
 	width: 110px;
 	height: 25px;
 	text-decoration: none;
-	background: url("https://www.mozilla.org/images/subsite_mozilla-org.gif") no-repeat;
+	background: url("images/subsite_mozilla-org.gif") no-repeat;
 	margin-bottom: 1.5em;
 }
 
